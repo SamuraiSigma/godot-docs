@@ -19,8 +19,6 @@ Member Functions
 ----------------
 
 +------------------------------+-----------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`      | :ref:`add<class_STTQueue_add>`  **(** :ref:`String<class_string>` keyword  **)**              |
-+------------------------------+-----------------------------------------------------------------------------------------------+
 | void                         | :ref:`clear<class_STTQueue_clear>`  **(** **)**                                               |
 +------------------------------+-----------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`empty<class_STTQueue_empty>`  **(** **)**                                               |
@@ -46,12 +44,6 @@ Wrapper for a queue datatype. Typically stores keywords from speech recognition.
 
 Member Function Description
 ---------------------------
-
-.. _class_STTQueue_add:
-
-- :ref:`bool<class_bool>`  **add**  **(** :ref:`String<class_string>` keyword  **)**
-
-Adds the specified keyword to the end of the queue, returning ``true`` if successful (i.e., didn't exceed the queue capacity).
 
 .. _class_STTQueue_clear:
 

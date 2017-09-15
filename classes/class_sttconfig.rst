@@ -19,11 +19,11 @@ Member Functions
 ----------------
 
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_dict_filename<class_STTConfig_get_dict_filename>`  **(** **)**                                            |
+| :ref:`String<class_string>`  | :ref:`get_dict_filename<class_STTConfig_get_dict_filename>`  **(** **)** const                                      |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_hmm_dirname<class_STTConfig_get_hmm_dirname>`  **(** **)**                                                |
+| :ref:`String<class_string>`  | :ref:`get_hmm_dirname<class_STTConfig_get_hmm_dirname>`  **(** **)** const                                          |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`  | :ref:`get_kws_filename<class_STTConfig_get_kws_filename>`  **(** **)**                                              |
+| :ref:`String<class_string>`  | :ref:`get_kws_filename<class_STTConfig_get_kws_filename>`  **(** **)** const                                        |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`init<class_STTConfig_init>`  **(** **)**                                                                      |
 +------------------------------+---------------------------------------------------------------------------------------------------------------------+
@@ -44,19 +44,19 @@ Member Function Description
 
 .. _class_STTConfig_get_dict_filename:
 
-- :ref:`String<class_string>`  **get_dict_filename**  **(** **)**
+- :ref:`String<class_string>`  **get_dict_filename**  **(** **)** const
 
 Returns the currently defined dictionary filename. If no name has been defined yet, returns an empty :ref:`String<class_string>` (``""``).
 
 .. _class_STTConfig_get_hmm_dirname:
 
-- :ref:`String<class_string>`  **get_hmm_dirname**  **(** **)**
+- :ref:`String<class_string>`  **get_hmm_dirname**  **(** **)** const
 
 Returns the currently defined HMM directory name. If no name has been defined yet, returns an empty :ref:`String<class_string>` (``""``).
 
 .. _class_STTConfig_get_kws_filename:
 
-- :ref:`String<class_string>`  **get_kws_filename**  **(** **)**
+- :ref:`String<class_string>`  **get_kws_filename**  **(** **)** const
 
 Returns the currently defined keywords filename. If no name has been defined yet, returns an empty :ref:`String<class_string>` (``""``).
 
@@ -73,6 +73,10 @@ Returns one of the following :ref:`STTError<class_stterror>` values:
 - ``OK``
 
 - ``UNDEF_FILES_ERR``
+
+- ``USER_DIR_MAKE_ERR``
+
+- ``USER_DIR_COPY_ERR``
 
 - ``MULTIBYTE_STR_ERR``
 

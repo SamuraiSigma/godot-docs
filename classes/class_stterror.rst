@@ -29,16 +29,18 @@ Numeric Constants
 - **UNDEF_FILES_ERR** = **1** --- One or more file/directory names aren't defined.
 - **UNDEF_CONFIG_ERR** = **2** --- Undefined configuration variable :ref:`STTConfig<class_sttconfig>`.
 - **UNDEF_QUEUE_ERR** = **3** --- Undefined keywords queue :ref:`STTQueue<class_sttqueue>`.
-- **MULTIBYTE_STR_ERR** = **4** --- Couldn't convert filename to a multibyte sequence.
-- **MEM_ALLOC_ERR** = **5** --- No memory available for allocation.
-- **CONFIG_CREATE_ERR** = **6** --- Couldn't create Pocketsphinx configuration variable.
-- **REC_CREATE_ERR** = **7** --- Couldn't open audio device (microphone).
-- **DECODER_CREATE_ERR** = **8** --- Couldn't create Sphinxbase decoder variable.
-- **REC_START_ERR** = **9** --- Couldn't start recording user's voice.
-- **REC_STOP_ERR** = **10** --- Couldn't stop recording user's voice.
-- **UTT_START_ERR** = **11** --- Couldn't start utterance during speech recognition.
-- **UTT_RESTART_ERR** = **12** --- Couldn't restart utterance during speech recognition.
-- **AUDIO_READ_ERR** = **13** --- Error while reading data from recorder.
+- **USER_DIR_MAKE_ERR** = **4** --- Couldn't create STT directory in ``user://``.
+- **USER_DIR_COPY_ERR** = **5** --- Couldn't copy config files to ``user://`` directory.
+- **MULTIBYTE_STR_ERR** = **6** --- Couldn't convert filename to a multibyte sequence.
+- **MEM_ALLOC_ERR** = **7** --- No memory available for allocation.
+- **CONFIG_CREATE_ERR** = **8** --- Couldn't create Pocketsphinx configuration variable.
+- **REC_CREATE_ERR** = **9** --- Couldn't open audio device (microphone).
+- **DECODER_CREATE_ERR** = **10** --- Couldn't create Sphinxbase decoder variable.
+- **REC_START_ERR** = **11** --- Couldn't start recording user's voice.
+- **REC_STOP_ERR** = **12** --- Couldn't stop recording user's voice.
+- **UTT_START_ERR** = **13** --- Couldn't start utterance during speech recognition.
+- **UTT_RESTART_ERR** = **14** --- Couldn't restart utterance during speech recognition.
+- **AUDIO_READ_ERR** = **15** --- Error while reading data from recorder.
 
 Description
 -----------

@@ -25,6 +25,10 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`        | :ref:`get_rec_buffer_size<class_STTRunner_get_rec_buffer_size>`  **(** **)**                             |
 +------------------------------+----------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`        | :ref:`get_run_error<class_STTRunner_get_run_error>`  **(** **)**                                         |
++------------------------------+----------------------------------------------------------------------------------------------------------+
+| void                         | :ref:`reset_run_error<class_STTRunner_reset_run_error>`  **(** **)**                                     |
++------------------------------+----------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`      | :ref:`running<class_STTRunner_running>`  **(** **)**                                                     |
 +------------------------------+----------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`set_config<class_STTRunner_set_config>`  **(** :ref:`Object<class_object>` stt_config  **)**       |
@@ -37,11 +41,6 @@ Member Functions
 +------------------------------+----------------------------------------------------------------------------------------------------------+
 | void                         | :ref:`stop<class_STTRunner_stop>`  **(** **)**                                                           |
 +------------------------------+----------------------------------------------------------------------------------------------------------+
-
-Signals
--------
-
--  **stt_thread_end**  **(** :ref:`int<class_int>` error number  **)**
 
 Numeric Constants
 -----------------
@@ -74,6 +73,34 @@ Returns the :ref:`STTQueue<class_sttqueue>` that stores recognized keywords, or 
 
 Returns the microphone recorder buffer size used for speech recognition.
 
+.. _class_STTRunner_get_run_error:
+
+- :ref:`int<class_int>`  **get_run_error**  **(** **)**
+
+Returns the :ref:`STTError<class_stterror>` value that depicts how the previously running speech recognition thread has ended. It can be one of the following values:
+
+- ``OK``
+
+- ``REC_START_ERR``
+
+- ``REC_STOP_ERR``
+
+- ``UTT_START_ERR``
+
+- ``UTT_RESTART_ERR``
+
+- ``AUDIO_READ_ERR``
+
+
+
+If no thread was previously run, returns ``OK``.
+
+.. _class_STTRunner_reset_run_error:
+
+- void  **reset_run_error**  **(** **)**
+
+Resets the :ref:`STTError<class_stterror>` value that depicts how the previously running speech recognition thread has ended, setting its value to ``OK``.
+
 .. _class_STTRunner_running:
 
 - :ref:`bool<class_bool>`  **running**  **(** **)**
@@ -102,7 +129,7 @@ Sets the microphone recorder buffer size used for speech recognition as the spec
 
 - :ref:`int<class_int>`  **start**  **(** **)**
 
-Creates a thread to repeatedly listen to keywords. The thread can be stopped with the :ref:`stop<class_STTRunner_stop>` method. If :ref:`start<class_STTRunner_start>` was previously called, the current thread is halted and a new recognition, with the specified arguments, is created.
+Creates a thread to repeatedly listen to keywords. The thread can be stopped with :ref:`stop<class_STTRunner_stop>`. If :ref:`start<class_STTRunner_start>` was previously called, the current thread is halted and a new recognition, with the specified arguments, is created.
 
 
 
@@ -113,6 +140,10 @@ Returns one of the following :ref:`STTError<class_stterror>` values:
 - ``UNDEF_CONFIG_ERR``
 
 - ``UNDEF_QUEUE_ERR``
+
+
+
+**Note:** To check for an error that occurred and stopped the thread, see :ref:`get_last_error<class_STTRunner_get_last_error>`.
 
 .. _class_STTRunner_stop:
 

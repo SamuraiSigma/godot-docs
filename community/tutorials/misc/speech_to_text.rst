@@ -292,12 +292,10 @@ through the tutorial.
 
 **Q: What happens if an error occurs in the runner thread?**
 
-    The ``stt_thread_end`` signal is emitted when the
-    :ref:`STTRunner <class_STTRunner>` thread ends, which can happen
-    manually (through the runner's :ref:`stop() <class_STTRunner_stop>`
-    method) or through an error. In both cases, the signal also carries an
-    :ref:`STTError <class_STTError>` error value so that the problem can
-    be identified.
+    The runner thread is halted when an error occurs, and an attribute stores
+    the corresponding :ref:`STTError <class_STTError>` error value. To get
+    this value, use the runner's
+    :ref:`get_run_error() <class_STTRunner_get_run_error>` method.
 
 **Q: Are the HMM directory, dictionary file or keywords file validated
 when I set them?**
