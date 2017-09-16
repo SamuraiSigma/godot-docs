@@ -306,3 +306,20 @@ when I set them?**
     method is called, but its documentation doesn't show any way of doing
     this analysis previously. I could validate the keywords file,
     though... Maybe I'll do this for a future version.
+
+**Q: How are STT config files managed by the module?**
+
+    Any STT config files should typically be stored in the ``res://`` path.
+    However, since *Pocketsphinx* does not recognize this Godot path
+    convention, there is a need to copy these files to ``user://`` so their
+    paths can be externally referenced.
+
+    The files are copied there when :ref:`STTConfig's <class_STTConfig>`
+    :ref:`init() <class_STTConfig_init>` method is called, and always
+    overwrite previously existent files as a precaution. Note that STT
+    config files in ``user://`` shouldn't be modified while the game is
+    running!
+
+    All STT-related files and directories in ``user://`` are deleted when
+    the game is closed. This is done so that extra space isn't wasted
+    on the system.
