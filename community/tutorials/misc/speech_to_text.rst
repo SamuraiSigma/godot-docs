@@ -140,15 +140,14 @@ HMM directory
   `en-us`__ one from *CMUSphinx*. I recommend creating a ``res://stt/``
   directory, and saving the model directory as ``res://stt/hmm/``.
 
-.. _en-usModel: https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English/cmusphinx-en-us-8khz-5.2.tar.gz/download
+.. _en-usModel: https://sourceforge.net/projects/cmusphinx/files/Acoustic%20and%20Language%20Models/US%20English/cmusphinx-en-us-ptm-5.2.tar.gz/download
 
 __ en-usModel_
 
 Dictionary filename
-  *CMUSphinx* has one available for US English `here`__. Save it as
-  ``res://stt/en-us.dict``.
+  *Pocketsphinx* uses one for US English `here`__. Save it as ``res://stt/en-us.dict``.
 
-.. _en-usDictionary: http://svn.code.sf.net/p/cmusphinx/code/trunk/cmudict/cmudict-0.7b
+.. _en-usDictionary: https://raw.githubusercontent.com/cmusphinx/pocketsphinx/master/model/en-us/cmudict-en-us.dict
 
 __ en-usDictionary_
 
@@ -269,8 +268,8 @@ For safety, it would be wise to do so using the runner's
 :ref:`running() <class_STTRunner_running>` method, and act according to
 that.
 
-Try starting a scene and check if the keyword colors appear on screen as
-you speak them!
+Start a scene and check if the keyword colors appear on Godot's output
+window as you speak them!
 
 Important questions
 -------------------
