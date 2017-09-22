@@ -8,8 +8,8 @@ Why?
 
 Godot has nodes to draw sprites, polygons, particles, and all sorts of
 stuff. For most cases this is enough, but not always. Before crying in fear, 
-angst, and rage because a node to draw that specific *something* does not exist...
-it would be good to know that it is possible to easily make any 2D node (be it
+angst, and rage because a node to draw that-specific-something does not exist... it would
+be good to know that it is possible to easily make any 2D node (be it
 :ref:`Control <class_Control>` or :ref:`Node2D <class_Node2D>`
 based) draw custom commands. It is *really* easy to do it too.
 

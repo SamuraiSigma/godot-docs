@@ -37,12 +37,6 @@ Signals
 Emitted when the color is changed.
 
 
-Member Variables
-----------------
-
-- :ref:`Color<class_color>` **color**
-- :ref:`bool<class_bool>` **edit_alpha**
-
 Description
 -----------
 

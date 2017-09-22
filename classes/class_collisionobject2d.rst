@@ -67,18 +67,15 @@ Member Functions
 Signals
 -------
 
--  **input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`Object<class_object>` event, :ref:`int<class_int>` shape_idx  **)**
--  **mouse_entered**  **(** **)**
+-  **input_event**  **(** :ref:`Object<class_object>` viewport, :ref:`InputEvent<class_inputevent>` event, :ref:`int<class_int>` shape_idx  **)**
+This signal triggers when an input event fires over a shape. The first parameter is the viewport where the event took place. The second holds the input event received, and the third the shape of this object where it happened.
+
+-  **mouse_enter**  **(** **)**
 This event fires only once when the mouse pointer enters any shape of this object.
 
--  **mouse_exited**  **(** **)**
+-  **mouse_exit**  **(** **)**
 This event fires only once when the mouse pointer exits all shapes of this object.
 
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **input_pickable**
 
 Description
 -----------

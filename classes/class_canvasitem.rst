@@ -158,18 +158,6 @@ Emitted when the item rect has changed.
 Emitted when the visibility (hidden/visible) changes.
 
 
-Member Variables
-----------------
-
-- :ref:`int<class_int>` **light_mask**
-- :ref:`Material<class_material>` **material**
-- :ref:`Color<class_color>` **modulate**
-- :ref:`Color<class_color>` **self_modulate**
-- :ref:`bool<class_bool>` **show_behind_parent**
-- :ref:`bool<class_bool>` **show_on_top**
-- :ref:`bool<class_bool>` **use_parent_material**
-- :ref:`bool<class_bool>` **visible**
-
 Numeric Constants
 -----------------
 

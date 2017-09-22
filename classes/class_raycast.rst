@@ -58,14 +58,6 @@ Member Functions
 | void                           | :ref:`set_type_mask<class_RayCast_set_type_mask>`  **(** :ref:`int<class_int>` mask  **)**              |
 +--------------------------------+---------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-- :ref:`Vector3<class_vector3>` **cast_to**
-- :ref:`int<class_int>` **collision_layer**
-- :ref:`bool<class_bool>` **enabled**
-- :ref:`int<class_int>` **type_mask**
-
 Description
 -----------
 
@@ -126,12 +118,6 @@ Return the closest object the ray is pointing to. Note that this does not consid
 
 Returns the collision shape of the closest object the ray is pointing to.
 
-.. _class_RayCast_get_collision_layer:
-
-- :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
-
-Returns the collision layer for this ray.
-
 .. _class_RayCast_get_collision_normal:
 
 - :ref:`Vector3<class_vector3>`  **get_collision_normal**  **(** **)** const
@@ -143,6 +129,12 @@ Returns the normal of the intersecting object shape face containing the collisio
 - :ref:`Vector3<class_vector3>`  **get_collision_point**  **(** **)** const
 
 Returns collision point. This point is in **global** coordinate system.
+
+.. _class_RayCast_get_layer_mask:
+
+- :ref:`int<class_int>`  **get_layer_mask**  **(** **)** const
+
+Returns the layer mask for this ray.
 
 .. _class_RayCast_get_type_mask:
 
@@ -189,6 +181,12 @@ Set the mask to filter objects. Only objects with at least the same mask element
 - void  **set_enabled**  **(** :ref:`bool<class_bool>` enabled  **)**
 
 Enables the RayCast2D. Only enabled raycasts will be able to query the space and report collisions.
+
+.. _class_RayCast_set_layer_mask:
+
+- void  **set_layer_mask**  **(** :ref:`int<class_int>` mask  **)**
+
+Set the mask to filter objects. Only objects with at least the same mask element set will be detected.
 
 .. _class_RayCast_set_type_mask:
 

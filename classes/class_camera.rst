@@ -43,6 +43,8 @@ Member Functions
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_v_offset<class_Camera_get_v_offset>`  **(** **)** const                                                                                                   |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`                  | :ref:`get_visible_layers<class_Camera_get_visible_layers>`  **(** **)** const                                                                                       |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_zfar<class_Camera_get_zfar>`  **(** **)** const                                                                                                           |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`              | :ref:`get_znear<class_Camera_get_znear>`  **(** **)** const                                                                                                         |
@@ -76,6 +78,8 @@ Member Functions
 | void                                   | :ref:`set_perspective<class_Camera_set_perspective>`  **(** :ref:`float<class_float>` fov, :ref:`float<class_float>` z_near, :ref:`float<class_float>` z_far  **)** |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                   | :ref:`set_v_offset<class_Camera_set_v_offset>`  **(** :ref:`float<class_float>` ofs  **)**                                                                          |
++----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| void                                   | :ref:`set_visible_layers<class_Camera_set_visible_layers>`  **(** :ref:`int<class_int>` mask  **)**                                                                 |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`          | :ref:`unproject_position<class_Camera_unproject_position>`  **(** :ref:`Vector3<class_vector3>` world_point  **)** const                                            |
 +----------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -142,6 +146,10 @@ Get the camera transform. Subclassed cameras (such as CharacterCamera) may provi
 - :ref:`float<class_float>`  **get_size**  **(** **)** const
 
 .. _class_Camera_get_v_offset:
+
+- :ref:`float<class_float>`  **get_v_offset**  **(** **)** const
+
+.. _class_Camera_get_visible_layers:
 
 - :ref:`float<class_float>`  **get_v_offset**  **(** **)** const
 
@@ -222,6 +230,10 @@ Set the camera projection to orthogonal mode, by specifying a width and the *nea
 Set the camera projection to perspective mode, by specifying a *FOV* Y angle in degrees (FOV means Field of View), and the *near* and *far* clip planes in worldspace units.
 
 .. _class_Camera_set_v_offset:
+
+- void  **set_v_offset**  **(** :ref:`float<class_float>` ofs  **)**
+
+.. _class_Camera_set_visible_layers:
 
 - void  **set_v_offset**  **(** :ref:`float<class_float>` ofs  **)**
 

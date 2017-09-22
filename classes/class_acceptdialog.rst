@@ -50,12 +50,6 @@ Emitted when accepted.
 Emitted with a custom button is added.
 
 
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **dialog_hide_on_ok**
-- :ref:`String<class_string>` **dialog_text**
-
 Description
 -----------
 

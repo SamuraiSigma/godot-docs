@@ -86,6 +86,14 @@ Return a hashed integer value representing the dictionary contents.
 
 Return the list of keys in the :ref:`Dictionary<class_dictionary>`.
 
+.. _class_Dictionary_parse_json:
+
+- :ref:`int<class_int>`  **parse_json**  **(** :ref:`String<class_string>` json  **)**
+
+Parse JSON text to the dictionary. Return OK when successed or the error code when failed.
+
+Be aware that the JSON specification does not define integer or float types, but only a number type. Therefore, parsing a JSON text will convert every numerical values to :ref:`float<class_float>` types.
+
 .. _class_Dictionary_size:
 
 - :ref:`int<class_int>`  **size**  **(** **)**

@@ -57,24 +57,12 @@ Member Functions
 Signals
 -------
 
--  **animation_finished**  **(** **)**
-Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted every time the last frame is drawn, before looping.
+-  **finished**  **(** **)**
+Emitted when the animation is finished (when it plays the last frame). If the animation is looping, this signal is emitted everytime the last frame is drawn, before looping.
 
 -  **frame_changed**  **(** **)**
 Emitted when frame is changed.
 
-
-Member Variables
-----------------
-
-- :ref:`String<class_string>` **animation**
-- :ref:`bool<class_bool>` **centered**
-- :ref:`bool<class_bool>` **flip_h**
-- :ref:`bool<class_bool>` **flip_v**
-- :ref:`int<class_int>` **frame**
-- :ref:`SpriteFrames<class_spriteframes>` **frames**
-- :ref:`Vector2<class_vector2>` **offset**
-- :ref:`bool<class_bool>` **playing**
 
 Description
 -----------

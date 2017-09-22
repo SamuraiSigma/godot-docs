@@ -133,18 +133,6 @@ Emitted when the cursor changes.
 Emitted when the text changes.
 
 
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **caret_blink**
-- :ref:`float<class_float>` **caret_blink_speed**
-- :ref:`bool<class_bool>` **caret_block_mode**
-- :ref:`bool<class_bool>` **highlight_all_occurrences**
-- :ref:`bool<class_bool>` **show_line_numbers**
-- :ref:`bool<class_bool>` **smooth_scrolling**
-- :ref:`bool<class_bool>` **syntax_highlighting**
-- :ref:`float<class_float>` **v_scroll_speed**
-
 Numeric Constants
 -----------------
 

@@ -33,7 +33,11 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Texture<class_texture>`  | :ref:`get_pressed_texture<class_TextureButton_get_pressed_texture>`  **(** **)** const                                    |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| :ref:`int<class_int>`          | :ref:`get_resize_mode<class_TextureButton_get_resize_mode>`  **(** **)** const                                            |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | :ref:`int<class_int>`          | :ref:`get_stretch_mode<class_TextureButton_get_stretch_mode>`  **(** **)** const                                          |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| :ref:`Vector2<class_vector2>`  | :ref:`get_texture_scale<class_TextureButton_get_texture_scale>`  **(** **)** const                                        |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_click_mask<class_TextureButton_set_click_mask>`  **(** :ref:`BitMap<class_bitmap>` mask  **)**                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
@@ -49,31 +53,26 @@ Member Functions
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_pressed_texture<class_TextureButton_set_pressed_texture>`  **(** :ref:`Texture<class_texture>` texture  **)**   |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
+| void                           | :ref:`set_resize_mode<class_TextureButton_set_resize_mode>`  **(** :ref:`int<class_int>` p_mode  **)**                    |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | void                           | :ref:`set_stretch_mode<class_TextureButton_set_stretch_mode>`  **(** :ref:`int<class_int>` p_mode  **)**                  |
 +--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **expand**
-- :ref:`int<class_int>` **stretch_mode**
-- :ref:`BitMap<class_bitmap>` **texture_click_mask**
-- :ref:`Texture<class_texture>` **texture_disabled**
-- :ref:`Texture<class_texture>` **texture_focused**
-- :ref:`Texture<class_texture>` **texture_hover**
-- :ref:`Texture<class_texture>` **texture_normal**
-- :ref:`Texture<class_texture>` **texture_pressed**
+| void                           | :ref:`set_texture_scale<class_TextureButton_set_texture_scale>`  **(** :ref:`Vector2<class_vector2>` scale  **)**         |
++--------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Numeric Constants
 -----------------
 
-- **STRETCH_SCALE** = **0**
-- **STRETCH_TILE** = **1**
-- **STRETCH_KEEP** = **2**
-- **STRETCH_KEEP_CENTERED** = **3**
-- **STRETCH_KEEP_ASPECT** = **4**
-- **STRETCH_KEEP_ASPECT_CENTERED** = **5**
-- **STRETCH_KEEP_ASPECT_COVERED** = **6**
+- **RESIZE_SCALE** = **0**
+- **RESIZE_STRETCH** = **1**
+- **STRETCH_SCALE_ON_EXPAND** = **0**
+- **STRETCH_SCALE** = **1**
+- **STRETCH_TILE** = **2**
+- **STRETCH_KEEP** = **3**
+- **STRETCH_KEEP_CENTERED** = **4**
+- **STRETCH_KEEP_ASPECT** = **5**
+- **STRETCH_KEEP_ASPECT_CENTERED** = **6**
+- **STRETCH_KEEP_ASPECT_COVERED** = **7**
 
 Description
 -----------
@@ -113,7 +112,15 @@ Member Function Description
 
 - :ref:`Texture<class_texture>`  **get_pressed_texture**  **(** **)** const
 
+.. _class_TextureButton_get_resize_mode:
+
+- :ref:`int<class_int>`  **get_resize_mode**  **(** **)** const
+
 .. _class_TextureButton_get_stretch_mode:
+
+- :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
+
+.. _class_TextureButton_get_texture_scale:
 
 - :ref:`int<class_int>`  **get_stretch_mode**  **(** **)** const
 
@@ -145,7 +152,15 @@ Member Function Description
 
 - void  **set_pressed_texture**  **(** :ref:`Texture<class_texture>` texture  **)**
 
+.. _class_TextureButton_set_resize_mode:
+
+- void  **set_resize_mode**  **(** :ref:`int<class_int>` p_mode  **)**
+
 .. _class_TextureButton_set_stretch_mode:
+
+- void  **set_stretch_mode**  **(** :ref:`int<class_int>` p_mode  **)**
+
+.. _class_TextureButton_set_texture_scale:
 
 - void  **set_stretch_mode**  **(** :ref:`int<class_int>` p_mode  **)**
 

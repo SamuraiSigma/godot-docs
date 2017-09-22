@@ -61,7 +61,7 @@ Transforming shapes
 ~~~~~~~~~~~~~~~~~~~
 
 As seen before in the collide functions, 2D shapes in Godot can be
-transformed by using a regular :ref:`Transform2D <class_Transform2D>`
+transformed by using a regular :ref:`Matrix32 <class_Matrix32>`
 transform, meaning the functions can check for collisions while the 
 shapes are scaled, moved and
 rotated. The only limitation to this is that shapes with curved sections
@@ -94,7 +94,7 @@ against everything in two for loops like this:
             if (i.collides(j)):
                 do_collision_code()
 
-But this scales really bad. Let's imagine there are only 100 objects in
+But this scales really badly. Let's imagine there are only 100 objects in
 the game. This means that 100\*100=10000 collisions will need to be
 tested each frame. This is a lot!
 
@@ -197,9 +197,9 @@ adds collision shapes to it.
 
 .. image:: /img/spritewithcollision.png
 
-The CollisionPolygon2D will decompose the user-defined polygon into convex shapes
-(shapes can only be convex, remember?) before adding them to the CollisionObject2D.
-The following image shows such a decomposition:
+The CollisionPolygon2D will decompose the user-defined polygon into conves shapes
+convex shapes (shapes can only be convex, remember?) before adding them to
+the CollisionObject2D. The following image shows such a decomposition:
 
 .. image:: /img/decomposed.png
 
@@ -292,16 +292,6 @@ During the evaluation of the aforementioned function, the physics engine
 synchronizes state with the scene and allows full modification of the
 object's parameters.  Since physics may run in its own thread, parameter
 changes outside that callback will not take place until the next frame.
-
-.. note::
-    
-    When a RigidBody goes to sleep then the :ref:`_integrate_forces() <class_RigidBody2D__integrate_forces>` 
-    method will not be called (I.E. they act like a static body until a 
-    collision or a force is applied to them). To override this behavior you will 
-    need to keep the rigid body "awake" by creating a collision, applying a force to it 
-    (e.g. :ref:`set_linear_velocity <class_RigidBody2D_set_linear_velocity>`) 
-    or by disabling the `can_sleep` property (see :ref:`set_can_sleep <class_RigidBody2D_set_can_sleep>`). 
-    Be aware that this can have an effect on performance.
 
 Contact reporting
 -----------------

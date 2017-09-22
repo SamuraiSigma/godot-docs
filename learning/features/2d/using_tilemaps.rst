@@ -33,8 +33,8 @@ manually edit the resource:
 
 .. image:: /img/tileset_edit_resource.png
 
-There's enough properties to get by. With some effort, editing this
-way can work. But the easiest way to edit and maintain a tileset is exporting
+There's enough properties to get by, and with some effort editing this
+way can work, but the easiest way to edit and maintain a tileset is exporting
 it from a specially-crafted scene!
 
 TileSet scene
@@ -145,11 +145,11 @@ using the lock button:
 You can also flip and rotate sprites in the TileMap editor (note:
 flipping the sprite in the TileSet will have no effect). Icons at the
 top right of the editor allow flipping and rotating of the currently
-selected sprite - you can also use the A and S keys to flip the sprite
-horizontally and vertically. With a brick pattern like this tutorial uses,
-flipping the sprites would create unpleasant discontinuities unless you're
-flipping an entire region of bricks. But for some kinds of tiles, flipping
-can be a convenient and space-saving feature.
+selected sprite - you can also use A and S to flip horizontally and
+vertically. With a brick pattern like this tutorial uses, flipping the
+sprites would create unpleasant discontinuities unless you're flipping
+an entire region of bricks, but for some kinds of tiles flipping can
+be a convenient and space-saving feature.
 
 Offset and scaling artifacts
 ----------------------------

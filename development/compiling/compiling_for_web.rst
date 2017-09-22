@@ -16,8 +16,8 @@ To compile export templates for the Web, the following is required:
    untested as of now)
 -  `SCons <http://www.scons.org>`__ build system
 
-Building export templates
--------------------------
+Compiling
+---------
 
 Start a terminal and set the environment variable ``EMSCRIPTEN_ROOT`` to the
 installation directory of Emscripten::
@@ -40,87 +40,83 @@ build or ``release_debug`` for a debug build::
 
 The engine will now be compiled to JavaScript by Emscripten. If all goes well,
 the resulting file will be placed in the ``bin`` subdirectory. Its name is
-``godot.javascript.opt.zip`` for release or ``godot.javascript.opt.debug.zip``
-for debug.
+``godot.javascript.opt.asm.js`` for release or
+``godot.javascript.opt.debug.asm.js`` for debug. Additionally, two files of
+the same name but with the extensions ``.js`` and ``.html.mem`` will be
+generated.
 
-Finally, rename the zip archive to ``javascript_release.zip`` for the
-release template::
+Building export templates
+-------------------------
 
-    mv bin/godot.javascript.opt.zip bin/javascript_release.zip
+After compiling, further steps are required to build the template.
+The actual web export template has the form of a zip file containing at least
+these 5 files:
+
+1. ``godot.asm.js`` — This is the file that was just compiled, but under a
+   different name.
+
+   For the release template::
+
+       cp bin/godot.javascript.opt.asm.js godot.asm.js
+
+   For the debug template::
+
+       cp bin/godot.javascript.opt.debug.asm.js godot.asm.js
+
+2. ``godot.js``
+3. ``godot.mem`` — other files created during compilation, initially with the
+   same name as the ``.asm.js`` file, except ``.asm.js`` is replaced by
+   ``.js`` for ``godot.js`` and ``.html.mem`` for
+   ``godot.mem``.
+
+   For the release template::
+
+       cp bin/godot.javascript.opt.js       godot.js
+       cp bin/godot.javascript.opt.html.mem godot.mem
+
+   For the debug template::
+
+       cp bin/godot.javascript.opt.debug.js       godot.js
+       cp bin/godot.javascript.opt.debug.html.mem godot.mem
+
+4. ``godot.html``
+5. ``godotfs.js`` — Both of these files are located within the Godot Engine
+   repository, under ``tools/dist/html_fs/``.
+
+::
+
+    cp tools/dist/html_fs/godot.html .
+    cp tools/dist/html_fs/godotfs.js .
+
+Once these 5 files are assembled, zip them up and your export template is ready
+to go. The correct name for the template file is ``javascript_release.zip`` for
+the release template::
+
+    zip javascript_release.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
 And ``javascript_debug.zip`` for the debug template::
 
-    mv bin/godot.javascript.opt.debug.zip bin/javascript_debug.zip
+    zip javascript_debug.zip godot.asm.js godot.js godot.mem godotfs.js godot.html
 
-Compiling to WebAssembly
--------------------------
+The resulting files must be placed in the ``templates`` directory in your Godot
+user directory::
 
-The current default for exporting to the web is to compile to *asm.js*, a
-highly optimizable subset of JavaScript.
+    mv javascript_release.zip ~/.godot/templates
+    mv javascript_debug.zip ~/.godot/templates
 
-It is also possible to compile to the *WebAssembly* format, which offers better
-performance and loading times. Running a game in this format requires a browser
-with WebAssembly support.
-
-Compiling to WebAssembly requires using the latest version of Emscripten.
-If your OS does not offer up-to-date packages for Emscripten, the easiest way
-is usually to install using Emscripten's `emsdk <http://kripken.github.io/emscripten-site/docs/getting_started/downloads.html>`_.
-
-WebAssembly can be compiled in two ways: The default way is to first
-compile to asm.js similarly to the default method, then translate to
-WebAssembly using a tool called ``asm2wasm``. Emscripten automatically takes
-care of both processes, we simply run SCons.
-
-The other method uses LLVM's WebAssembly backend. This backend is not yet
-available in release versions of LLVM, only in development builds.
-Compiling with this backend outputs files in LLVM's ``.s`` format, which is
-translated into actual WebAssembly using a tool called ``s2wasm``.
-Emscripten manages these processes as well, so we just invoke SCons.
-
-In order to choose one of the two methods, the ``LLVM_ROOT`` variable in the
-Emscripten configuration file ``~/.emscripten`` is set. If it points to a
-directory containing binaries of Emscripten's *fastcomp* fork of clang,
-``asm2wasm`` is used. This is the default in a normal Emscripten installation.
-Otherwise, LLVM binaries built with the WebAssembly backend will be expected
-and ``s2wasm`` is used. On Windows, make sure to escape backslashes of paths
-within this file as double backslashes ``\\`` or use Unix-style paths with
-a single forward slash ``/``.
-
-With ``LLVM_ROOT`` set up correctly, compiling to WebAssembly is as easy as
-adding ``wasm=yes`` to the SCons arguments::
-
-    scons platform=javascript target=release wasm=yes
-    scons platform=javascript target=release_debug wasm=yes
-
-These commands will build WebAssembly export templates in either release or
-debug mode. The generated files' names contain ``.webassembly`` as an
-additional file suffix before the extension.
-
-Finally, the WebAssembly templates are renamed to ``webassembly_release.zip``
-and ``webassembly_debug.zip``::
-
-    mv bin/godot.javascript.opt.webassembly.zip       bin/webassembly_release.zip
-    mv bin/godot.javascript.opt.debug.webassembly.zip bin/webassembly_debug.zip
+If you are writing custom modules or using custom C++ code, you may want to
+configure your zip files as custom export templates. This can be done in the
+export GUI, using the "Custom Package" option.
+There's no need to copy the templates in this case — you can simply reference
+the resulting files in your Godot source folder, so the next time you build,
+the custom templates will already be referenced.
 
 Customizing the HTML page
 -------------------------
 
-Rather than the default HTML file generated when compiling, it is
-also possible to use a custom HTML page. This allows drastic customization of
-the final web presentation.
-
-This can be done in two ways. The first is to replace the
-``platform/javascript/godot_shell.html`` file. In this case, the HTML file is
-used at build time, allowing Emscripten to substitute the ``{{{ SCRIPT }}}``
-placeholder by a ``<script>`` element containing the loader code. This makes
-the HTML file usable for both asm.js and WebAssembly templates, since they use
-different loading code.
-
-The other method is to simply replace the ``godot.html`` file within the
-complete export templates. This method does not require building the engine.
-However, in this case, no ``{{{ SCRIPT }}}`` placeholder should be used in the
-HTML file, since it would never be replaced — the loader code for either asm.js
-or WebAssembly must already be included in the file.
+Rather than the default ``godot.html`` file from the Godot Engine repository's
+``tools/dist/html_fs/`` directory, it is also possible to use a custom HTML
+page. This allows drastic customization of the final web presentation.
 
 In the HTML page, the JavaScript object ``Module`` is the page's interface to
 Emscripten. Check the official documentation for information on how to use it:
@@ -137,19 +133,43 @@ substituted by values dependent on the export:
 +------------------------------+-----------------------------------------------+
 | Placeholder                  | substituted by                                |
 +==============================+===============================================+
-| ``$GODOT_BASE``              | Basename of files referenced within the page, |
-|                              | without suffixes                              |
+| ``$GODOT_JS``                | Name of the compiled Godot Engine JavaScript  |
+|                              | file                                          |
 +------------------------------+-----------------------------------------------+
-| ``$GODOT_DEBUG_ENABLED``     | ``true`` if debugging, ``false`` otherwise    |
+| ``$GODOT_FS``                | Name of the filesystem access JavaScript      |
+|                              | file                                          |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_MEM``               | Name of the memory initialization file        |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_CANVAS_WIDTH``      | Integer specifying the initial display width  |
+|                              | of the game                                   |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_CANVAS_HEIGHT``     | Integer specifying the initial display height |
+|                              | of the game                                   |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_DEBUG_ENABLED``     | String ``true`` if debugging, ``false``       |
+|                              | otherwise                                     |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_CONTROLS_ENABLED``  | String ``true`` if ``html/controls_enabled``  |
+|                              | is enabled, ``false`` otherwise               |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_HEAD_TITLE``        | Title of the page, normally used as content   |
+|                              | of the HTML ``<title>`` element               |
 +------------------------------+-----------------------------------------------+
 | ``$GODOT_HEAD_INCLUDE``      | Custom string to include just before the end  |
 |                              | of the HTML ``<head>`` element                |
 +------------------------------+-----------------------------------------------+
-| ``{{{ SCRIPT }}}``           | ``<script>`` that loads the engine,           |
-|                              | substituted only when building, not on export |
+| ``$GODOT_STYLE_FONT_FAMILY`` | CSS format ``font-family`` to use, without    |
+|                              | terminating semicolon                         |
++------------------------------+-----------------------------------------------+
+| ``$GODOT_STYLE_INCLUDE``     | Custom string to include just before the end  |
+|                              | of the page's CSS                             |
 +------------------------------+-----------------------------------------------+
 
-The first three of the placeholders listed should always be implemented in the
+The first five of the placeholders listed should always be implemented in the
 HTML page, since they are important for the correct presentation of the game.
-The last placeholder is important when rewriting the ``godot_shell.html`` file
-and is substituted during build time rather than export.
+The other placeholders are optional.
+
+Finally, the custom HTML page is installed by replacing the existing
+``godot.html`` file in the export template with the new one, retaining the name
+of the original.

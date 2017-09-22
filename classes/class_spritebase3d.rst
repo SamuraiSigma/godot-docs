@@ -86,7 +86,8 @@ Numeric Constants
 - **FLAG_TRANSPARENT** = **0**
 - **FLAG_SHADED** = **1**
 - **FLAG_DOUBLE_SIDED** = **2**
-- **FLAG_MAX** = **3**
+- **FLAG_ONTOP** = **3**
+- **FLAG_MAX** = **4**
 - **ALPHA_CUT_DISABLED** = **0**
 - **ALPHA_CUT_DISCARD** = **1**
 - **ALPHA_CUT_OPAQUE_PREPASS** = **2**

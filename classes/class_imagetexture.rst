@@ -95,6 +95,14 @@ Return the storage type. One of :ref:`ImageTexture<class_imagetexture>`.STORAGE\
 
 Load an ImageTexure.
 
+.. _class_ImageTexture_normal_to_xy:
+
+- void  **normal_to_xy**  **(** **)**
+
+.. _class_ImageTexture_premultiply_alpha:
+
+- void  **premultiply_alpha**  **(** **)**
+
 .. _class_ImageTexture_set_data:
 
 - void  **set_data**  **(** :ref:`Image<class_image>` image  **)**

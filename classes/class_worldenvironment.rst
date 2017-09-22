@@ -24,11 +24,6 @@ Member Functions
 | void                                   | :ref:`set_environment<class_WorldEnvironment_set_environment>`  **(** :ref:`Environment<class_environment>` env  **)** |
 +----------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
-Member Variables
-----------------
-
-- :ref:`Environment<class_environment>` **environment**
-
 Description
 -----------
 

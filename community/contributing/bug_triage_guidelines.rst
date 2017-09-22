@@ -103,7 +103,7 @@ unthinkable to see issues that fit two bills. The general idea is that
 there will be specialized contributors teams behind all topics, so they
 can focus on the issues labelled with their team's topic.
 
-**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *UWP*
+**Platforms:** *Android*, *HTML5*, *iOS*, *Linux*, *OS X*, *Windows*, *Winrt*
 
 By default, it is assumed that a given issue applies to all platforms. 
 If one of the platform labels is used, it is then exclusive and the

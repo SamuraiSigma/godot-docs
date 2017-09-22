@@ -157,6 +157,8 @@ Open a XML file for parsing. This returns an error code.
 
 Open a XML raw buffer for parsing. This returns an error code.
 
+Open a XML raw buffer for parsing. This returns an error code.
+
 .. _class_XMLParser_read:
 
 - :ref:`int<class_int>`  **read**  **(** **)**

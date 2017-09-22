@@ -56,7 +56,7 @@ like ``godot.uwp.opt.debug.32.x86.exe`` (with variations for each
 target/arch).
 
 Copy one of these to ``misc/dist/uwp_template`` inside the Godot source
-folder and rename the binary to ``godot.uwp.exe``. From the ANGLE source,
+folder and rename the binary to ``godot.winrt.exe``. From the ANGLE source,
 under ``winrt/10/src/Release_%arch%`` (where ``%arch%`` can be ``Win32``,
 ``x64`` or ``ARM``), get the ``libEGL.dll`` and the ``libGLESv2.dll``,
 putting them along with the executable.

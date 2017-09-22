@@ -55,14 +55,6 @@ Signals
 Emitted when the time runs out.
 
 
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **autostart**
-- :ref:`bool<class_bool>` **one_shot**
-- :ref:`int<class_int>` **process_mode**
-- :ref:`float<class_float>` **wait_time**
-
 Numeric Constants
 -----------------
 

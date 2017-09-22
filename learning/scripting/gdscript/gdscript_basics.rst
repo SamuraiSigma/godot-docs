@@ -75,7 +75,7 @@ here's a simple example of how GDScript looks.
     const answer = 42
     const thename = "Charly"
 
-    # enums
+    # enums (Godot 2.1.3+)
 
     enum {UNIT_NEUTRAL, UNIT_ENEMY, UNIT_ALLY}
     enum Named {THING_1, THING_2, ANOTHER_THING = -1}
@@ -189,7 +189,7 @@ keywords are reserved words (tokens), they can't be used as identifiers.
 +------------+---------------------------------------------------------------------------------------------------------------+
 | const      | Defines a constant.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
-| enum       | Defines an enum.                                                                                              |
+| enum       | Defines an enum. (Godot 2.1.3+)                                                                               |
 +------------+---------------------------------------------------------------------------------------------------------------+
 | var        | Defines a variable.                                                                                           |
 +------------+---------------------------------------------------------------------------------------------------------------+
@@ -252,7 +252,7 @@ The following is the list of supported operators and their precedence
 +---------------------------------------------------------------+-----------------------------------------+
 | ``or`` ``||``                                                 | Boolean OR                              |
 +---------------------------------------------------------------+-----------------------------------------+
-| ``if x else``                                                 | Ternary if/else                         |
+| ``if x else``                                                 | Ternary if/else (Godot 2.1.3+)          |
 +---------------------------------------------------------------+-----------------------------------------+
 | ``=`` ``+=`` ``-=`` ``*=`` ``/=`` ``%=`` ``&=`` ``|=``        | Assignment, Lowest Priority             |
 +---------------------------------------------------------------+-----------------------------------------+
@@ -527,6 +527,8 @@ expressions and must be assigned on initialization.
 Enums
 ^^^^^
 
+*Note, only available in Godot 2.1.3 or higher.*
+
 Enums are basically a shorthand for constants, and are pretty useful if you
 want to assign consecutive integers to some constant.
 
@@ -647,7 +649,8 @@ Short statements can be written on the same line as the condition::
         return x
 
 Sometimes you might want to assign a different initial value based on a
-boolean expression. In this case ternary-if expressions come in handy::
+boolean expression. In this case ternary-if expressions come in handy
+(Godot 2.1.3+)::
 
     var x = [true-value] if [expression] else [false-value]
     y += 3 if y < 10 else -1
@@ -691,132 +694,6 @@ in the loop variable.
 
     for c in "Hello":
         print(c)   # iterate through all characters in a String, print every letter on new line
-
-match
-^^^^^
-
-A ``match`` statement is used to branch execution of a program.
-It's the equivalent of the ``switch`` statement found in many other languages but offers some additional features.
-
-Basic syntax:
-
-::
-
-    match [expression]:
-        [pattern](s): [block]
-        [pattern](s): [block]
-        [pattern](s): [block]
-
-
-**Crash-course for people who are familiar to switch statements**:
-
-1. Replace ``switch`` with ``match``
-2. Remove ``case``
-3. Remove any ``break``'s. If you don't want to ``break`` by default you can use ``continue`` for a fallthrough.
-4. Change ``default`` to a single underscore.
-
-
-**Control flow**:
-
-The patterns are matched from top to bottom.
-If a pattern matches, the corresponding block will be executed. After that, the execution continues below the ``match`` statement.
-If you want to have a fallthrough you can use ``continue`` to stop execution in the current block and check the ones below it.
-
-There are 6 pattern types:
-
-- constant pattern
-    constant primitives, like numbers and strings ::
-
-        match x:
-            1:      print("We are number one!")
-            2:      print("Two are better than one!")
-            "test": print("Oh snap! It's a string!")
-
-
-- variable pattern
-    matches the contents of a variable/enum ::
-
-        match typeof(x):
-            TYPE_FLOAT:  print("float")
-            TYPE_STRING: print("text")
-            TYPE_ARRAY:  print("array")
-
-
-- wildcard pattern
-    This pattern matches everything. It's written as a single underscore.
-
-    It can be used as the equivalent of the ``default`` in a ``switch`` statement in other languages. ::
-
-        match x:
-            1: print("it's one!")
-            2: print("it's one times two!")
-            _: print("it's not 1 or 2. I don't care tbh.")
-
-
-- binding pattern
-    A binding pattern introduces a new variable. Like the wildcard pattern, it matches everything - and also gives that value a name.
-    It's especially useful in array and dictionary patterns. ::
-
-        match x:
-            1:           print("it's one!")
-            2:           print("it's one times two!")
-            var new_var: print("it's not 1 or 2, it's ", new_var)
-
-
-- array pattern
-    matches an array. Every single element of the array pattern is a pattern itself so you can nest them.
-
-    The length of the array is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
-
-    **Open-ended array**: An array can be bigger than the pattern by making the last subpattern ``..``
-
-    Every subpattern has to be comma separated. ::
-
-        match x:
-            []:
-                print("empty array")
-            [1, 3, "test", null]:
-                print("very specific array")
-            [var start, _, "test"]:
-                print("first element is ", start, ", and the last is \"test\"")
-            [42, ..]:
-                print("open ended array")
-
-- dictionary pattern
-    Works in the same was as the array pattern. Every key has to be a constant pattern.
-
-    The size of the dictionary is tested first, it has to be the same size as the pattern, otherwise the pattern don't match.
-
-    **Open-ended dictionary**: A dictionary can be bigger than the pattern by making the last subpattern ``..``
-
-    Every subpattern has to be comma separated.
-
-    If you don't specify a value, then only the existence of the key is checked.
-
-    A value pattern is separated from the key pattern with a ``:`` ::
-
-        match x:
-            {}:
-                print("empty dict")
-            {"name": "dennis"}:
-                print("the name is dennis")
-            {"name": "dennis", "age": var age}:
-                print("dennis is ", age, " years old.")
-            {"name", "age"}:
-                print("has a name and an age, but it's not dennis :(")
-            {"key": "godotisawesome", ..}:
-                print("I only checked for one entry and ignored the rest")
-
-Multipatterns:
-    You can also specify multiple patterns separated by a comma. These patterns aren't allowed to have any bindings in them. ::
-
-        match x:
-            1, 2, 3:
-                print("it's 1 - 3")
-            "sword", "splashpotion", "fist":
-                print("yep, you've taken damage")
-
-
 
 Classes
 ~~~~~~~
@@ -867,7 +744,7 @@ Inheritance uses the ``extends`` keyword:
 
 
 To check if a given instance inherits from a given class
-the ``is`` keyword can be used:
+the ``extends`` keyword can be used as an operator instead:
 
 ::
 
@@ -1309,9 +1186,6 @@ signal is received, execution will recommence. Here are some examples:
 
     # Resume execution when animation is done playing:
     yield(get_node("AnimationPlayer"), "finished")
-
-    # Wait 5 seconds, then resume execution
-    yield(get_tree().create_timer(5.0), "timeout")
 
 Onready keyword
 ~~~~~~~~~~~~~~~

@@ -39,7 +39,9 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`edit<class_EditorPlugin_edit>`  **(** :ref:`Object<class_object>` object  **)** virtual                                                                                                                       |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`bool<class_bool>`                              | :ref:`forward_canvas_gui_input<class_EditorPlugin_forward_canvas_gui_input>`  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual                    |
+| void                                                 | :ref:`edit_resource<class_EditorPlugin_edit_resource>`  **(** :ref:`Object<class_object>` arg0  **)**                                                                                                               |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`bool<class_bool>`                              | :ref:`forward_input_event<class_EditorPlugin_forward_input_event>`  **(** :ref:`InputEvent<class_inputevent>` event  **)** virtual                                                                                  |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | void                                                 | :ref:`forward_draw_over_canvas<class_EditorPlugin_forward_draw_over_canvas>`  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`Control<class_control>` canvas  **)** virtual                         |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -49,7 +51,11 @@ Member Functions
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`EditorInterface<class_editorinterface>`        | :ref:`get_editor_interface<class_EditorPlugin_get_editor_interface>`  **(** **)**                                                                                                                                   |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`String<class_string>`                          | :ref:`get_plugin_name<class_EditorPlugin_get_plugin_name>`  **(** **)** virtual                                                                                                                                     |
+| :ref:`Control<class_control>`                        | :ref:`get_editor_viewport<class_EditorPlugin_get_editor_viewport>`  **(** **)**                                                                                                                                     |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`String<class_string>`                          | :ref:`get_name<class_EditorPlugin_get_name>`  **(** **)** virtual                                                                                                                                                   |
++------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| :ref:`EditorSelection<class_editorselection>`        | :ref:`get_selection<class_EditorPlugin_get_selection>`  **(** **)**                                                                                                                                                 |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Dictionary<class_dictionary>`                  | :ref:`get_state<class_EditorPlugin_get_state>`  **(** **)** virtual                                                                                                                                                 |
 +------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -201,7 +207,13 @@ This is used for plugins that create gizmos used by the spatial editor. Just che
 
 This function is used for plugins that edit specific object types (nodes or resources). It requests the editor to edit the given object.
 
-.. _class_EditorPlugin_forward_canvas_gui_input:
+.. _class_EditorPlugin_edit_resource:
+
+- void  **edit_resource**  **(** :ref:`Object<class_object>` arg0  **)**
+
+Tells the editor to handle the edit of the given resource. For example, if you pass a script as argument, the editor will open the script editor.
+
+.. _class_EditorPlugin_forward_input_event:
 
 - :ref:`bool<class_bool>`  **forward_canvas_gui_input**  **(** :ref:`Transform2D<class_transform2d>` canvas_xform, :ref:`InputEvent<class_inputevent>` event  **)** virtual
 
@@ -229,7 +241,13 @@ This is for editors that edit script based objects. You can return a list of bre
 
 - :ref:`EditorInterface<class_editorinterface>`  **get_editor_interface**  **(** **)**
 
-.. _class_EditorPlugin_get_plugin_name:
+.. _class_EditorPlugin_get_editor_viewport:
+
+- :ref:`Control<class_control>`  **get_editor_viewport**  **(** **)**
+
+Get the main editor control. Use this as a parent for main screens.
+
+.. _class_EditorPlugin_get_name:
 
 - :ref:`String<class_string>`  **get_plugin_name**  **(** **)** virtual
 
@@ -312,12 +330,6 @@ Remove a custom type added by :ref:`EditorPlugin.add_custom_type<class_EditorPlu
 - void  **save_external_data**  **(** **)** virtual
 
 This method is called after the editor saves the project or when it's closed. It asks the plugin to save edited external scenes/resources.
-
-.. _class_EditorPlugin_set_input_event_forwarding_always_enabled:
-
-- void  **set_input_event_forwarding_always_enabled**  **(** **)**
-
-Use this method if you always want to receive inputs from 3D view screen inside :ref:`forward_spatial_gui_input<class_EditorPlugin_forward_spatial_gui_input>`. It might be especially usable if your plugin will want to use raycast in the scene.
 
 .. _class_EditorPlugin_set_state:
 

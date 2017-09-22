@@ -68,17 +68,6 @@ This signal is emitted when min, max, range or step change.
 This signal is emitted when value changes.
 
 
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **exp_edit**
-- :ref:`float<class_float>` **max_value**
-- :ref:`float<class_float>` **min_value**
-- :ref:`float<class_float>` **page**
-- :ref:`bool<class_bool>` **rounded**
-- :ref:`float<class_float>` **step**
-- :ref:`float<class_float>` **value**
-
 Description
 -----------
 

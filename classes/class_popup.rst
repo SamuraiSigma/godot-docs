@@ -44,11 +44,6 @@ This signal is emitted when a popup is about to be shown. (often used in :ref:`P
 This signal is emitted when a popup is hidden.
 
 
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **popup_exclusive**
-
 Numeric Constants
 -----------------
 

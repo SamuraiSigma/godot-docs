@@ -97,21 +97,6 @@ Signal sent when the GraphNode is moved.
 -  **raise_request**  **(** **)**
 Signal sent when the GraphNode is requested to be displayed over other ones. Happens on focusing (clicking into) the GraphNode.
 
--  **resize_request**  **(** :ref:`Vector2<class_vector2>` new_minsize  **)**
-
-Member Variables
-----------------
-
-- :ref:`bool<class_bool>` **resizeable**
-- :ref:`bool<class_bool>` **show_close**
-- :ref:`String<class_string>` **title**
-
-Numeric Constants
------------------
-
-- **OVERLAY_DISABLED** = **0**
-- **OVERLAY_BREAKPOINT** = **1**
-- **OVERLAY_POSITION** = **2**
 
 Description
 -----------

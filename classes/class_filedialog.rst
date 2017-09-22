@@ -65,17 +65,9 @@ Event emitted when the user selects a directory.
 -  **file_selected**  **(** :ref:`String<class_string>` path  **)**
 Event emitted when the user selects a file (double clicks it or presses the OK button).
 
--  **files_selected**  **(** :ref:`PoolStringArray<class_poolstringarray>` paths  **)**
+-  **files_selected**  **(** :ref:`StringArray<class_stringarray>` paths  **)**
 Event emitted when the user selects multiple files.
 
-
-Member Variables
-----------------
-
-- :ref:`int<class_int>` **access**
-- :ref:`PoolStringArray<class_poolstringarray>` **filters**
-- :ref:`int<class_int>` **mode**
-- :ref:`bool<class_bool>` **show_hidden_files**
 
 Numeric Constants
 -----------------

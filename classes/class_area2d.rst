@@ -95,48 +95,30 @@ Member Functions
 Signals
 -------
 
--  **area_entered**  **(** :ref:`Object<class_object>` area  **)**
+-  **area_enter**  **(** :ref:`Object<class_object>` area  **)**
 This signal is triggered only once when an area enters this area. The only parameter passed is the area that entered this area.
 
--  **area_exited**  **(** :ref:`Object<class_object>` area  **)**
-This signal is triggered only once when an area exits this area. The only parameter passed is the area that exited this area.
-
--  **area_shape_entered**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+-  **area_enter_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 This signal triggers only once when an area enters this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
 
--  **area_shape_exited**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
+-  **area_exit**  **(** :ref:`Object<class_object>` area  **)**
+This signal is triggered only once when an area exits this area. The only parameter passed is the area that exited this area.
+
+-  **area_exit_shape**  **(** :ref:`int<class_int>` area_id, :ref:`Object<class_object>` area, :ref:`int<class_int>` area_shape, :ref:`int<class_int>` self_shape  **)**
 This signal triggers only once when an area exits this area. The first parameter is the area's :ref:`RID<class_rid>`. The second one is the area as an object. The third one is the index of the shape entering this area, and the fourth one is the index of the shape in this area that reported the entering.
 
--  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
 This signal is triggered only once when a body enters this area. The only parameter passed is the body that entered this area.
 
--  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
-This signal is triggered only once when a body exits this area. The only parameter passed is the body that exited this area.
-
--  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+-  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
 This signal triggers only once when a body enters this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape of the body that entered this area, and the fourth one is the index of the shape in this area that reported the entering.
 
--  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
+-  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
+This signal is triggered only once when a body exits this area. The only parameter passed is the body that exited this area.
+
+-  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` area_shape  **)**
 This signal triggers only once when a body exits this area. The first parameter is the body's :ref:`RID<class_rid>`. The second one is the body as an object. The third one is the index of the shape exiting this area, and the fourth one is the index of the shape in this area that reported the exit.
 
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **angular_damp**
-- :ref:`String<class_string>` **audio_bus_name**
-- :ref:`bool<class_bool>` **audio_bus_override**
-- :ref:`int<class_int>` **collision_layer**
-- :ref:`int<class_int>` **collision_mask**
-- :ref:`float<class_float>` **gravity**
-- :ref:`float<class_float>` **gravity_distance_scale**
-- :ref:`bool<class_bool>` **gravity_point**
-- :ref:`Vector2<class_vector2>` **gravity_vec**
-- :ref:`float<class_float>` **linear_damp**
-- :ref:`bool<class_bool>` **monitorable**
-- :ref:`bool<class_bool>` **monitoring**
-- :ref:`float<class_float>` **priority**
-- :ref:`int<class_int>` **space_override**
 
 Description
 -----------

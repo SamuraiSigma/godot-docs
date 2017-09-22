@@ -62,7 +62,7 @@ Member Function Description
 
 - :ref:`int<class_int>`  **get_collision_layer**  **(** **)** const
 
-Return the physics layer the shape belongs to.
+Return the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_get_exclude:
 
@@ -104,7 +104,7 @@ Return the transform matrix of the shape queried.
 
 - void  **set_collision_layer**  **(** :ref:`int<class_int>` collision_layer  **)**
 
-Set the physics layer the shape belongs to.
+Set the list of objects, or object :ref:`RID<class_rid>`\ s, that will be excluded from collisions.
 
 .. _class_Physics2DShapeQueryParameters_set_exclude:
 

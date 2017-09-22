@@ -79,20 +79,15 @@ Member Functions
 Signals
 -------
 
--  **tween_completed**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+-  **tween_complete**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
 This signal is emitted when a tween ends.
 
--  **tween_started**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
+-  **tween_start**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key  **)**
 This signal is emitted when a tween starts.
 
 -  **tween_step**  **(** :ref:`Object<class_object>` object, :ref:`String<class_string>` key, :ref:`float<class_float>` elapsed, :ref:`Object<class_object>` value  **)**
 This signal is emitted each step of the tweening.
 
-
-Member Variables
-----------------
-
-- :ref:`int<class_int>` **playback_process_mode**
 
 Numeric Constants
 -----------------
@@ -179,7 +174,7 @@ Call ``callback`` of ``object`` after ``duration``. ``arg1``-``arg5`` are argume
 
 - :ref:`bool<class_bool>`  **interpolate_deferred_callback**  **(** :ref:`Object<class_object>` object, :ref:`float<class_float>` duration, :ref:`String<class_string>` callback, :ref:`Variant<class_variant>` arg1=null, :ref:`Variant<class_variant>` arg2=null, :ref:`Variant<class_variant>` arg3=null, :ref:`Variant<class_variant>` arg4=null, :ref:`Variant<class_variant>` arg5=null  **)**
 
-Call ``callback`` of ``object`` after ``duration`` on the main thread (similar to methog Object.call_deferred). [codearg1``-``arg5`` are arguments to be passed to the callback.
+Call ``callback`` of ``object`` after ``times_in_sec`` on the main thread (similar to methog Object.call_deferred). [codearg1``-``arg5`` are arguments to be passed to the callback.
 
 .. _class_Tween_interpolate_method:
 

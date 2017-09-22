@@ -110,12 +110,9 @@ Emitted when an item is activated (double-clicked).
 -  **item_collapsed**  **(** :ref:`Object<class_object>` item  **)**
 Emitted when an item is collapsed by a click on the folding arrow.
 
--  **item_custom_button_pressed**  **(** **)**
--  **item_double_clicked**  **(** **)**
 -  **item_edited**  **(** **)**
 Emitted when an item is editted.
 
--  **item_rmb_edited**  **(** **)**
 -  **item_rmb_selected**  **(** :ref:`Vector2<class_vector2>` pos  **)**
 Emitted when an item is selected with right mouse button.
 
@@ -173,15 +170,13 @@ Clear the tree. This erases all of the items.
 
 Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the last child of the root, or it'll the be the root itself if the tree is empty.
 
+Create an item in the tree and add it as the last child of ``parent``. If parent is not given, it will be added as the last child of the root, or it'll the be the root itself if the tree is empty.
+
 .. _class_Tree_ensure_cursor_is_visible:
 
 - void  **ensure_cursor_is_visible**  **(** **)**
 
 Make the current selected item visible. This will scroll the tree to make sure the selected item is in sight.
-
-.. _class_Tree_get_allow_reselect:
-
-- :ref:`bool<class_bool>`  **get_allow_reselect**  **(** **)** const
 
 .. _class_Tree_get_allow_rmb_select:
 
@@ -243,6 +238,8 @@ Get the column of the cell for the current edited icon. This is only available f
 
 Get the rectangle area of the the specified item. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
 
+Get the rectangle area of the the specified item. If column is specified, only get the position and size of that column, otherwise get the rectangle containing all columns.
+
 .. _class_Tree_get_item_at_pos:
 
 - :ref:`TreeItem<class_treeitem>`  **get_item_at_pos**  **(** :ref:`Vector2<class_vector2>` pos  **)** const
@@ -252,6 +249,8 @@ Get the tree item at the specified position (relative to the tree origin positio
 .. _class_Tree_get_next_selected:
 
 - :ref:`TreeItem<class_treeitem>`  **get_next_selected**  **(** :ref:`Object<class_object>` from  **)**
+
+Get the next selected item after the given one.
 
 Get the next selected item after the given one.
 
@@ -285,15 +284,17 @@ Get the currently selected item.
 
 Get the column number of the current selection.
 
+.. _class_Tree_get_single_select_cell_editing_only_when_already_selected:
+
+- :ref:`bool<class_bool>`  **get_single_select_cell_editing_only_when_already_selected**  **(** **)** const
+
+Get whether the editing of a cell should only happen when it is already selected.
+
 .. _class_Tree_is_folding_hidden:
 
 - :ref:`bool<class_bool>`  **is_folding_hidden**  **(** **)** const
 
 Get whether the folding arrow is hidden.
-
-.. _class_Tree_set_allow_reselect:
-
-- void  **set_allow_reselect**  **(** :ref:`bool<class_bool>` allow  **)**
 
 .. _class_Tree_set_allow_rmb_select:
 
@@ -354,5 +355,11 @@ Set whether the root of the tree should be hidden.
 - void  **set_select_mode**  **(** :ref:`int<class_int>` mode  **)**
 
 Set the selection mode. Use one of the ``SELECT\_\*`` constants.
+
+.. _class_Tree_set_single_select_cell_editing_only_when_already_selected:
+
+- void  **set_single_select_cell_editing_only_when_already_selected**  **(** :ref:`bool<class_bool>` enable  **)**
+
+Set whether the editing of a cell should only happen when it is already selected.
 
 

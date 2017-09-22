@@ -99,18 +99,18 @@ Member Functions
 Signals
 -------
 
--  **body_entered**  **(** :ref:`Object<class_object>` body  **)**
+-  **body_enter**  **(** :ref:`Object<class_object>` body  **)**
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
--  **body_exited**  **(** :ref:`Object<class_object>` body  **)**
-Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
-
--  **body_shape_entered**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **body_enter_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 Emitted when a body enters into contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 This signal not only receives the body that collided with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body collided with.
 
--  **body_shape_exited**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
+-  **body_exit**  **(** :ref:`Object<class_object>` body  **)**
+Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
+
+-  **body_exit_shape**  **(** :ref:`int<class_int>` body_id, :ref:`Object<class_object>` body, :ref:`int<class_int>` body_shape, :ref:`int<class_int>` local_shape  **)**
 Emitted when a body shape exits contact with this one. Contact monitor and contacts reported must be enabled for this to work.
 
 This signal not only receives the body that stopped colliding with this one, but also its :ref:`RID<class_rid>` (body_id), the shape index from the colliding body (body_shape), and the shape index from this body (local_shape) the other body stopped colliding with.
@@ -118,27 +118,6 @@ This signal not only receives the body that stopped colliding with this one, but
 -  **sleeping_state_changed**  **(** **)**
 Emitted when the body changes its sleeping state. Either by sleeping or waking up.
 
-
-Member Variables
-----------------
-
-- :ref:`float<class_float>` **angular_damp**
-- :ref:`Vector3<class_vector3>` **angular_velocity**
-- :ref:`int<class_int>` **axis_lock**
-- :ref:`float<class_float>` **bounce**
-- :ref:`bool<class_bool>` **can_sleep**
-- :ref:`bool<class_bool>` **contact_monitor**
-- :ref:`int<class_int>` **contacts_reported**
-- :ref:`bool<class_bool>` **continuous_cd**
-- :ref:`bool<class_bool>` **custom_integrator**
-- :ref:`float<class_float>` **friction**
-- :ref:`float<class_float>` **gravity_scale**
-- :ref:`float<class_float>` **linear_damp**
-- :ref:`Vector3<class_vector3>` **linear_velocity**
-- :ref:`float<class_float>` **mass**
-- :ref:`int<class_int>` **mode**
-- :ref:`bool<class_bool>` **sleeping**
-- :ref:`float<class_float>` **weight**
 
 Numeric Constants
 -----------------

@@ -21,13 +21,8 @@ Member Functions
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
 | :ref:`bool<class_bool>`        | :ref:`is_valid<class_GDFunctionState_is_valid>`  **(** :ref:`bool<class_bool>` extended_check=false  **)** const |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
-| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=null  **)**                 |
+| :ref:`Variant<class_variant>`  | :ref:`resume<class_GDFunctionState_resume>`  **(** :ref:`Variant<class_variant>` arg=NULL  **)**                 |
 +--------------------------------+------------------------------------------------------------------------------------------------------------------+
-
-Signals
--------
-
--  **completed**  **(** :ref:`Nil<class_nil>` result  **)**
 
 Description
 -----------

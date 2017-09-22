@@ -22,6 +22,11 @@ Member Functions
 | :ref:`BaseButton<class_basebutton>`  | :ref:`get_pressed_button<class_ButtonGroup_get_pressed_button>`  **(** **)** |
 +--------------------------------------+------------------------------------------------------------------------------+
 
+Signals
+-------
+
+-  **button_selected**  **(** :ref:`Object<class_object>` button  **)**
+
 Description
 -----------
 

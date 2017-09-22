@@ -27,10 +27,6 @@ Member Functions
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`float<class_float>`      | :ref:`angle_to_point<class_Vector2_angle_to_point>`  **(** :ref:`Vector2<class_vector2>` to  **)**                                                                                                              |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`float<class_float>`      | :ref:`aspect<class_Vector2_aspect>`  **(** **)**                                                                                                                                                                |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| :ref:`Vector2<class_vector2>`  | :ref:`bounce<class_Vector2_bounce>`  **(** :ref:`Vector2<class_vector2>` n  **)**                                                                                                                               |
-+--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`clamped<class_Vector2_clamped>`  **(** :ref:`float<class_float>` length  **)**                                                                                                                            |
 +--------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | :ref:`Vector2<class_vector2>`  | :ref:`cubic_interpolate<class_Vector2_cubic_interpolate>`  **(** :ref:`Vector2<class_vector2>` b, :ref:`Vector2<class_vector2>` pre_a, :ref:`Vector2<class_vector2>` post_b, :ref:`float<class_float>` t  **)** |
@@ -109,18 +105,6 @@ Returns the angle in radians between the two vectors.
 - :ref:`float<class_float>`  **angle_to_point**  **(** :ref:`Vector2<class_vector2>` to  **)**
 
 Returns the angle in radians between the line connecting the two points and the x coordinate.
-
-.. _class_Vector2_aspect:
-
-- :ref:`float<class_float>`  **aspect**  **(** **)**
-
-Returns the ratio of X to Y.
-
-.. _class_Vector2_bounce:
-
-- :ref:`Vector2<class_vector2>`  **bounce**  **(** :ref:`Vector2<class_vector2>` n  **)**
-
-Bounce returns the vector "bounced off" from the given plane, specified by its normal vector.
 
 .. _class_Vector2_clamped:
 

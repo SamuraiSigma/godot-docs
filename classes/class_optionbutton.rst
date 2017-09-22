@@ -67,12 +67,6 @@ Signals
 This signal is emitted when the current item was changed by the user. ID of the item selected is passed as argument (if no IDs were added, ID will be just the item index).
 
 
-Member Variables
-----------------
-
-- :ref:`Array<class_array>` **items**
-- :ref:`int<class_int>` **selected**
-
 Description
 -----------
 
