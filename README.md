@@ -4,6 +4,10 @@ This repository contains the source files of [Godot Engine](http://godotengine.o
 
 They are meant to be parsed with the [Sphinx](http://sphinx-doc.org/) documentation builder to build the HTML documentation on [Godot's website](http://docs.godotengine.org).
 
+## What's new in this fork?
+
+Compared to the original [repository](https://github.com/godotengine/godot-docs), this fork adds documentation on the [*Speech to Text*](https://github.com/SamuraiSigma/speech-to-text) module, including how to use it and its classes. The main tutorial page can be found [here](https://samuraisigma.github.io/godot-docs/doc/community/tutorials/misc/speech_to_text.html), on the GitHub Pages.
+
 ## Contributing changes
 
 Though arguably less convenient to edit than a wiki, this git repository is meant to receive pull requests to always improve the documentation, add new pages, etc. Having direct access to the source files in a revision control system is a big plus to ensure the quality of our documentation.
@@ -58,7 +62,7 @@ You can then test the changes live by opening `_build/html/index.html` in your f
 
 ### Building with Sphinx on Windows
 
-On Windows, you need to: 
+On Windows, you need to:
 * Download the Python installer [here](https://www.python.org/downloads/).
 * Install Python. Don't forget to check the "Add Python to PATH" box.
 * Use the above `pip` commands.
