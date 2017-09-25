@@ -6,8 +6,10 @@ Speech to text
 This is a quick tutorial on how the *Speech to Text* module works, as well
 as how to use it in Godot.
 
-**Note: Currently, the module only works on Unix platforms that have
-PulseAudio or ALSA support.**
+**Currently, the module works on the following platforms:**
+
+- Unix (with **PulseAudio** or **ALSA** as requirements);
+- Windows.
 
 Speech recognition 101
 ----------------------
