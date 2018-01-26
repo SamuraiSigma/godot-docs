@@ -9,7 +9,8 @@ as how to use it in Godot.
 **Currently, the module works on the following platforms:**
 
 - Unix (with **PulseAudio** or **ALSA** as requirements);
-- Windows.
+- Windows;
+- OS X.
 
 Speech recognition 101
 ----------------------
