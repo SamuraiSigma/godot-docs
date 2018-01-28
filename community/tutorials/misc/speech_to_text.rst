@@ -8,9 +8,10 @@ as how to use it in Godot.
 
 **Currently, the module works on the following platforms:**
 
-- Unix (with **PulseAudio** or **ALSA** as requirements);
 - Windows;
-- OS X.
+- OS X;
+- Unix (with **PulseAudio** or **ALSA** as requirements);
+- iOS.
 
 Speech recognition 101
 ----------------------
