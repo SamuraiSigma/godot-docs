@@ -6,12 +6,16 @@ Speech to text
 This is a quick tutorial on how the *Speech to Text* module works, as well
 as how to use it in Godot.
 
-**Currently, the module works on the following platforms:**
+**The module can be built with Godot 2.1.4 on the following platforms:**
 
 - Windows;
 - OS X;
 - Unix (with **PulseAudio** or **ALSA** as requirements);
-- iOS.
+- iOS;
+- Android (untested; see below).
+
+Barring Android, export templates were successfully built, on all referred platforms,
+for Godot 2.1.4 with *Speech to Text*.
 
 Speech recognition 101
 ----------------------
